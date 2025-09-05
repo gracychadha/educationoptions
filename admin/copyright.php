@@ -1,0 +1,1 @@
+<p class="mb-0">&copy; <?php echo date("Y"); ?> <a href="index.php">Education Options </a> | Developed By <a href="https://vibrantick.in/" target="_blank">Vibrantick Infotech Solutions</a></p>

@@ -1,0 +1,33 @@
+RewriteEngine On
+RewriteBase /educationoptions/
+
+# ======================================
+# General Static Pages
+# ======================================
+RewriteRule ^/?$            index.php           [L]
+RewriteRule ^about-us/?$ about-us.php [L]
+RewriteRule ^terms-&-conditions/?$   terms-&-conditions.php   [L]
+RewriteRule ^privacy-policy/?$    privacy-policy.php    [L]
+RewriteRule ^contact-us/?$    contact-us.php    [L]
+RewriteRule ^services/?$    service.php  [L]
+RewriteRule ^partners/?$    partners.php  [L]
+RewriteRule ^blogs/?$    blog.php  [L]
+RewriteRule ^team-detail/?$    team-detail.php  [L]
+RewriteRule ^blog-details/?$    blog-details.php  [L]
+
+
+
+# Handle /services or /services/
+RewriteRule ^services/?$ service.php [L]
+
+# If it's not a real file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Handle /services/some-service-name
+RewriteRule ^service/([^/]+)/?$ service.php?product=$1 [L,QSA]
+
+
+
+
+
