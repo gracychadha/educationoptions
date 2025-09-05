@@ -44,6 +44,11 @@
     - Overlay
 ------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,900;1,400;1,500;1,700&display=swap");
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+
+
+
 [data-overlay] {
   position: relative;
   background-size: cover;
@@ -1992,7 +1997,7 @@ select {
   font-weight: 400;
   font-size: 14px;
   padding-right: 10px;
-  border-right: 0.5px solid gray;
+  /* border-right: 0.5px solid gray; */
 }
 .header-top-left ul li span {
   font-weight: 500;
@@ -2005,7 +2010,7 @@ select {
   height: 40px;
   display: block;
   line-height: 40px;
-  padding: 0px 30px;
+  padding: 0px 20px;
   color: #ffffff;
   font-size: 14px;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -2049,10 +2054,10 @@ select {
 }
 
 .header-language .nice-select {
-  height: 40px;
-  line-height: 40px;
-  padding-left: 40px;
-  padding-right: 40px;
+      height: 30px;
+    line-height: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .header-language .nice-select::before {
   position: absolute;
@@ -2182,7 +2187,7 @@ select {
 }
 .main-menu ul li {
   display: inline-block;
-  margin-left: 40px;
+  margin-left: 30px;
   position: relative;
   /*submenu start*/
   /*submenu end*/
@@ -8682,6 +8687,10 @@ padding-right:10px;
   border-bottom: 1px solid gray;
 
 }
+
+
+/* js */
+
 .list-border-bottom:hover{
   color:#fc0404;
 }
@@ -8697,3 +8706,12 @@ padding-right:10px;
 } */
 
 /*# sourceMappingURL=main.css.map */
+/* Hide Google Translate top banner */
+.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0 !important; /* Google Translate sometimes adds body margin for banner */
+}
+

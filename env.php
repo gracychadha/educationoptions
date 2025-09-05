@@ -1,3 +1,3 @@
 <?php
-putenv('BASEURL=http://localhost/educationoptions/')
+putenv('BASEURL=http://localhost/globaledu/educationoptions/')
 ?>

@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo($faviconPath); ?>">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo ($faviconPath); ?>">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -112,6 +112,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- MeanMenu -->
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+
+    <!-- Google Translate widget -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,fr,es,de,it,hi,ja'
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
     <style>
         @media only screen and (max-width: 786px) {
             .mySwiper3 .swiper-wrapper .swiper-slide {
@@ -169,11 +186,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                     <?php
 
                     foreach ($sliders as $item) {
-                        ?>
+                    ?>
                         <div class="swiper-slide ">
                             <img src="admin/<?php echo $item['image']; ?>">
                         </div>
-                        <?php
+                    <?php
                     }
                     ?>
                 </div>
@@ -187,14 +204,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                 <?php
                 $first = true;
                 foreach ($sliders as $item) {
-                    ?>
+                ?>
                     <div class="carousel-item <?php echo $first ? 'active' : ''; ?>">
                         <img class="d-block w-100" src="admin/<?php echo htmlspecialchars($item['image']); ?>" alt="Slide">
                     </div>
                     <?php
                     $first = false;
                 }
-                ?>
+                    ?>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -211,14 +228,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
 
                     <?php
                     foreach ($sliders as $item) {
-                        ?>
+                    ?>
                         <div class="single-slider slider-height d-flex align-items-center swiper-slide"
                             data-swiper-autoplay="5000">
                             <div class="slide-bg" data-background="admin/<?php echo $item['image']; ?>"></div>
                         </div>
                         <?php
                     }
-                    ?>
+                        ?>
                 </div>
                 
                 <div class="swiper-button-prev slide-prev"><i class="far fa-long-arrow-left"></i></div>
@@ -312,12 +329,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                         <div class="about_wrapper">
                             <div class="about_wrapper__certificate">
                                 <img src="<?= isset($datachoose['image4']) ? "admin/choose_us_icon/" . $datachoose['image4'] : "<?= getenv('BASEURL') ?>assets/img/about/certificate.png"
-                                    ?>" alt="">
+                                            ?>" alt="">
                             </div>
                             <div class="about_wrapper__group">
                                 <div class="about_wrapper__group-top mb-15">
                                     <img src="<?= isset($datachoose['image3']) ? "admin/choose_us_icon/" . $datachoose['image3'] : "<?= getenv('BASEURL') ?>assets/img/about/certificate.png"
-                                        ?>" alt="">
+                                                ?>" alt="">
                                 </div>
                                 <div class="about_wrapper__group-btm d-flex align-items-center justify-content-end">
                                     <div class="about_wrapper__group-btm-img1 ml-30">
@@ -360,27 +377,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                         <div class="fact text-center">
                             <h1 class="counter-count"><span
                                     class="counter"><?= htmlspecialchars($counter['counter1']) ?></span>+</h1>
-                           <span> <img src="admin/uploads/icons/<?= $counter['icon1'] ?>" > <?= htmlspecialchars($counter['title1']) ?></span>
+                            <span> <img src="admin/uploads/icons/<?= $counter['icon1'] ?>"> <?= htmlspecialchars($counter['title1']) ?></span>
                         </div>
                     </div>
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 mb-30">
                         <div class="fact text-center ">
                             <h1 class="counter-count"><span
                                     class="counter"><?= htmlspecialchars($counter['counter2']) ?></span>+</h1>
-                            <span><img src="admin/uploads/icons/<?= $counter['icon2'] ?>" > <?= htmlspecialchars($counter['title2']) ?></span>
+                            <span><img src="admin/uploads/icons/<?= $counter['icon2'] ?>"> <?= htmlspecialchars($counter['title2']) ?></span>
                         </div>
                     </div>
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 mb-30">
                         <div class="fact text-center ">
                             <h1 class="counter"><?= htmlspecialchars($counter['counter3']) ?></h1>
-                            <span><img src="admin/uploads/icons/<?= $counter['icon3'] ?>" > <?= htmlspecialchars($counter['title3']) ?></span>
+                            <span><img src="admin/uploads/icons/<?= $counter['icon3'] ?>"> <?= htmlspecialchars($counter['title3']) ?></span>
                         </div>
                     </div>
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 mb-30">
                         <div class="fact text-center ">
                             <h1 class="counter-count"><span
                                     class="counter"><?= htmlspecialchars($counter['counter4']) ?></span>k+</h1>
-                            <span><img src="admin/uploads/icons/<?= $counter['icon4'] ?>" > <?= htmlspecialchars($counter['title4']) ?></span>
+                            <span><img src="admin/uploads/icons/<?= $counter['icon4'] ?>"> <?= htmlspecialchars($counter['title4']) ?></span>
                         </div>
                     </div>
 
@@ -441,7 +458,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                 <?php
 
                 // funtionn to trim description in short according to word limit
-                
+
                 function trim_to_words($text, $limit = 20) //set word limit accordingly
                 {
                     $words = explode(' ', $text); // convert into array on basis of space
@@ -460,7 +477,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                             $desc = $item['description'];
                             $short_description = trim_to_words($desc);
 
-                            ?>
+                        ?>
 
                             <div class="swiper-slide wow fadeInUp" data-wow-delay="0.3s"
                                 style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
@@ -477,7 +494,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                                         <!-- <p class="hover-white ">
 
                                             <?=
-                                                $short_description;
+                                            $short_description;
                                             ?>
                                         </p> -->
                                         <a class="service-btn "
@@ -486,7 +503,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                                     </div>
                                 </div>
                             </div>
-                            <?php
+                        <?php
                         }
                         ?>
 
@@ -588,13 +605,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                         <div class="row g-0">
                             <?php
                             foreach ($partners as $item) {
-                                ?>
+                            ?>
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                                     <div class="partner-img">
                                         <a href="partners"><img src="admin/<?php echo $item['image']; ?>" alt=""></a>
                                     </div>
                                 </div>
-                                <?php
+                            <?php
                             }
                             ?>
 
@@ -626,7 +643,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                     <div class="testimonail2-active  owl-carousel text-center testi-pad">
                         <?php
                         foreach ($testimonial as $item) {
-                            ?>
+                        ?>
                             <div class="testimonail__wrapper testimonail__wrapper2">
                                 <div class="testimonail__header">
                                     <div class="testimonail__header__img mb-25">
@@ -651,7 +668,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                                     </ul>
                                 </div>
                             </div>
-                            <?php
+                        <?php
                         }
                         ?>
 
@@ -689,7 +706,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                     foreach ($blog_data as $item) {
                         $content = $item['content'];
                         $short_content = trim_to_words($content);
-                        ?>
+                    ?>
                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                             <article class="blog mb-30">
                                 <div class="blog__thumb">
@@ -718,7 +735,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                                 </div>
                             </article>
                         </div>
-                        <?php
+                    <?php
                     }
                     ?>
 
@@ -793,8 +810,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
     </script>
     <!-- for newsform -->
     <script>
-        $(document).ready(function () {
-            $('#newsForm').on('submit', function (e) {
+        $(document).ready(function() {
+            $('#newsForm').on('submit', function(e) {
                 e.preventDefault(); // Prevent default form submission
                 Swal.fire({
                     title: 'Submitting...',
@@ -807,7 +824,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                             type: 'POST',
                             data: $(this).serialize(),
                             // dataType: 'json',
-                            success: function (response) {
+                            success: function(response) {
                                 console.log(response);
                                 Swal.fire({
                                     title: 'Success!',
@@ -818,7 +835,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
                                 $("#newsForm")[0]
                                     .reset(); // Reset the form fields
                             },
-                            error: function (xhr, status, error) {
+                            error: function(xhr, status, error) {
                                 Swal.fire({
                                     title: 'Error!',
                                     text: 'Submission failed: ' + error,
